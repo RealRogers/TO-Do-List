@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Define la codificación de caracteres como UTF-8 -->
+    <meta charset="UTF-8" />
+    <!-- Ajusta la vista para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Define el título de la página -->
+    <title>Improved To-Do List</title>
+    <!-- Enlaza el archivo CSS para estilos -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Importa la biblioteca de iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Contenedor principal de la aplicación -->
+    <div class="container">
+      <!-- Título de la aplicación -->
+      <h1>Todo List</h1>
+      <!-- Formulario para agregar nuevas tareas -->
+      <form id="task-form">
+        <!-- Campo de texto para ingresar la tarea -->
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Add New Todo"
+          required
+        />
+        <!-- Menú desplegable para seleccionar la categoría de la tarea -->
+        <select id="category-select">
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="shopping">Shopping</option>
+          <option value="other">Other</option>
+        </select>
+        <!-- Menú desplegable para seleccionar la prioridad de la tarea -->
+        <select id="priority-select">
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+        <!-- Campo para seleccionar la fecha de vencimiento -->
+        <input type="date" id="due-date-input" />
+        <!-- Botón para agregar la tarea -->
+        <button type="submit" id="add-button">
+          <i data-lucide="plus"></i>
+        </button>
+      </form>
+      <!-- Contenedor para la búsqueda de tareas -->
+      <div class="search-container">
+        <!-- Campo de texto para buscar tareas -->
+        <input type="text" id="search-input" placeholder="Search tasks" />
+        <!-- Botón para iniciar la búsqueda -->
+        <button id="search-button">
+          <i data-lucide="search"></i>
+        </button>
+      </div>
+      
+      <!-- Lista donde se mostrarán las tareas -->
+      <ul id="task-list"></ul>
+
+      <!-- Sección para mostrar estadísticas de productividad -->
+      <div id="productivity-stats" class="productivity-stats">
+        <!-- Título de las estadísticas -->
+        <h2>Productivity Stats</h2>
+        <!-- Número total de tareas -->
+        <p>Total Tasks: <span id="total-tasks">0</span></p>
+        <!-- Número de tareas completadas -->
+        <p>Completed Tasks: <span id="completed-tasks">0</span></p>
+        <!-- Número de tareas pendientes -->
+        <p>Pending Tasks: <span id="pending-tasks">0</span></p>
+      </div>
+
+      <!-- Botón para tomar screenshot de la lista de tareas completadas -->
+      <button id="screenshot-button">
+        <i data-lucide="camera"></i> Take Screenshot
+      </button>
+    </div>
+    <!-- Enlaza el archivo JavaScript que contiene la lógica de la aplicación -->
+    <script src="script.js"></script>
+  </body>
+</html>
